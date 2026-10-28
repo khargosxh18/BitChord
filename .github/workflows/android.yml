@@ -31,5 +31,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: bitchord-dev-debug
-        path: app/build/outputs/**/*.apk
+        path: app/build/intermediates/apk/dev/debug/*.apk
         if-no-files-found: error
