@@ -24,8 +24,12 @@ jobs:
     - name: Build Dev Debug APK
       run: ./gradlew :app:assembleDevDebug -Pbitchord.bundleWear=false -Pandroid.injected.build.abi=arm64-v8a --no-daemon
 
+    - name: List built APKs
+      run: find . -name "*.apk" -not -path "*/node_modules/*" -exec ls -lh {} \;
+
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
         name: bitchord-dev-debug
-        path: app/build/outputs/apk/dev/debug/*.apk
+        path: app/build/outputs/**/*.apk
+        if-no-files-found: error
