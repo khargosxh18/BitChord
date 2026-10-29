@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-dev-debug:
+  build-dev-benchmark:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,15 +21,17 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build Dev Debug APK
-      run: ./gradlew :app:assembleDevDebug -Pbitchord.bundleWear=false -Pandroid.injected.build.abi=arm64-v8a --no-daemon
+    - name: Build optimized (R8) APK
+      run: ./gradlew :app:assembleDevBenchmark -Pbitchord.bundleWear=false -Pandroid.injected.build.abi=arm64-v8a -Dorg.gradle.jvmargs="-Xmx6g -Dfile.encoding=UTF-8" --no-daemon
 
     - name: List built APKs
-      run: find . -name "*.apk" -not -path "*/node_modules/*" -exec ls -lh {} \;
+      run: find app/build -name "*.apk" -exec ls -lh {} \;
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: bitchord-dev-debug
-        path: app/build/intermediates/apk/dev/debug/*.apk
+        name: bitchord-dev-optimized
+        path: |
+          app/build/intermediates/apk/dev/benchmark/*.apk
+          app/build/outputs/apk/dev/benchmark/*.apk
         if-no-files-found: error
