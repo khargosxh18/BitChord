@@ -1,10 +1,10 @@
-name: Android Release APK (arm64-v8a)
+name: Android Dev APK
 
 on:
   workflow_dispatch:
 
 jobs:
-  build-prod-release:
+  build-dev-benchmark:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,37 +18,20 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Setup Secrets (Keystore & local.properties)
-      run: |
-        echo "LASTFM_API_KEY=${{ secrets.LASTFM_API_KEY }}" > local.properties
-        echo "LASTFM_SECRET=${{ secrets.LASTFM_SECRET }}" >> local.properties
-        echo "LISTEN_TOGETHER_SERVER=${{ secrets.LISTEN_TOGETHER_SERVER }}" >> local.properties
-
-        echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > bitchord-release.jks
-        {
-          echo "storeFile=bitchord-release.jks"
-          echo "storePassword=${{ secrets.KEYSTORE_PASSWORD }}"
-          echo "keyAlias=${{ secrets.KEY_ALIAS }}"
-          echo "keyPassword=${{ secrets.KEY_PASSWORD }}"
-        } > keystore.properties
-
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build signed prod release (R8) arm64-v8a APK
-      run: ./gradlew :app:assembleProdRelease -Pbitchord.bundleWear=false -Pandroid.injected.build.abi=arm64-v8a -Dorg.gradle.jvmargs="-Xmx6g -Dfile.encoding=UTF-8" --no-daemon
+    - name: Build optimized (R8) APK
+      run: ./gradlew :app:assembleDevBenchmark -Pbitchord.bundleWear=false -Pandroid.injected.build.abi=arm64-v8a -Dorg.gradle.jvmargs="-Xmx6g -Dfile.encoding=UTF-8" --no-daemon
 
     - name: List built APKs
-      run: find app/build/outputs/apk -name "*.apk" -exec ls -lh {} \;
-
-    - name: Verify signature
-      run: |
-        APK=$(ls app/build/outputs/apk/prod/release/*arm64-v8a*.apk | head -n 1)
-        "$ANDROID_HOME"/build-tools/$(ls "$ANDROID_HOME"/build-tools | sort -V | tail -n 1)/apksigner verify --print-certs "$APK"
+      run: find app/build -name "*.apk" -exec ls -lh {} \;
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: bitchord-prod-release-arm64-v8a-signed
-        path: app/build/outputs/apk/prod/release/*arm64-v8a*.apk
+        name: bitchord-dev-optimized
+        path: |
+          app/build/intermediates/apk/dev/benchmark/*.apk
+          app/build/outputs/apk/dev/benchmark/*.apk
         if-no-files-found: error
