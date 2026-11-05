@@ -1382,6 +1382,8 @@
     <string name="dac_volume_subtitle">DAC\'ın kendisinde ayarlanır; müzik ölçeklenmez</string>
     <string name="usb_allow_fixed_volume">Ses kontrolü olmayan DAC\'lara izin ver</string>
     <string name="usb_allow_fixed_volume_subtitle">Aksi takdirde böyle bir DAC normal çıkıştan çalar</string>
+    <string name="usb_remember_permission">USB DAC\'yi hatırla</string>
+    <string name="usb_remember_permission_subtitle">Yeniden bağlanırken izin istemini atlar</string>
     <string name="usb_allow_fixed_volume_confirm_title">Tam ölçekte çalınsın mı?</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord bu tür bir DAC\'ın ses düzeyini ayarlayamaz, bu yüzden tam ölçekte çalar ve yalnızca varsa DAC\'ın kendi düğmesi ses düzeyini denetler. Hassas kulaklıklarla tehlikeli derecede yüksek olabilir.</string>
     <string name="convert_for_limited_dac">Düşük özellikli DAC\'lar için dönüştür</string>

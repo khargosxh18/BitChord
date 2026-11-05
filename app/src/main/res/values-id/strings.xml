@@ -1402,6 +1402,8 @@
     <string name="dac_volume_subtitle">Diatur di DAC itu sendiri; musik tidak diskalakan</string>
     <string name="usb_allow_fixed_volume">Izinkan DAC tanpa kontrol volume</string>
     <string name="usb_allow_fixed_volume_subtitle">Jika tidak, DAC seperti itu memutar lewat output normal</string>
+    <string name="usb_remember_permission">Ingat DAC USB</string>
+    <string name="usb_remember_permission_subtitle">Lewati permintaan izin saat tersambung kembali</string>
     <string name="usb_allow_fixed_volume_confirm_title">Putar pada skala penuh?</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord tidak bisa mengatur volume DAC jenis ini, jadi DAC memutar pada skala penuh dan hanya kenopnya sendiri, jika ada, yang mengatur kenyaringan. Ini bisa sangat keras dan berbahaya dengan headphone sensitif.</string>
     <string name="convert_for_limited_dac">Konversi untuk DAC spesifikasi rendah</string>

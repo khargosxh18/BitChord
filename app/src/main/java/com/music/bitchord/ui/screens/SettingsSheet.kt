@@ -266,6 +266,7 @@ fun SettingsScreen(
     val bitPerfectReady by BitPerfectOutput.ready.collectAsStateWithLifecycle()
     val dacVolume by BitPerfectOutput.hardwareVolume.collectAsStateWithLifecycle()
     val usbAllowFixedVolume by AppSettings.usbAllowFixedVolume.collectAsStateWithLifecycle()
+    val usbRememberPermission by AppSettings.usbRememberPermission.collectAsStateWithLifecycle()
     val convertForLimitedDac by AppSettings.convertForLimitedDac.collectAsStateWithLifecycle()
     val loudnessNormalization by AppSettings.loudnessNormalization.collectAsStateWithLifecycle()
     val loudnessOffOnSpeaker by AppSettings.loudnessOffOnSpeaker.collectAsStateWithLifecycle()
@@ -719,6 +720,15 @@ fun SettingsScreen(
                         onCheckedChange = { on ->
                             if (on) onConfirmFixedVolume() else AppSettings.setUsbAllowFixedVolume(false)
                         },
+                    )
+                }
+                val rememberTitle = stringResource(R.string.usb_remember_permission)
+                row(rememberTitle, "permission", "usb", "dac", divided = false) {
+                    SettingsSubRow(
+                        title = rememberTitle,
+                        subtitle = stringResource(R.string.usb_remember_permission_subtitle),
+                        checked = usbRememberPermission,
+                        onCheckedChange = AppSettings::setUsbRememberPermission,
                     )
                 }
             }

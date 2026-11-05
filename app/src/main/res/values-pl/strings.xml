@@ -1465,6 +1465,8 @@
     <string name="dac_volume_subtitle">Ustawiana na samym DAC; muzyka nie jest skalowana</string>
     <string name="usb_allow_fixed_volume">Zezwalaj na DAC bez regulacji głośności</string>
     <string name="usb_allow_fixed_volume_subtitle">W przeciwnym razie taki DAC gra przez zwykłe wyjście</string>
+    <string name="usb_remember_permission">Zapamiętaj DAC USB</string>
+    <string name="usb_remember_permission_subtitle">Pomija prośbę o uprawnienia po ponownym podłączeniu</string>
     <string name="usb_allow_fixed_volume_confirm_title">Odtwarzać w pełnej skali?</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord nie może ustawić głośności tego typu DAC, więc gra on w pełnej skali, a głośność reguluje tylko jego własne pokrętło, jeśli je ma. Na czułych słuchawkach może to być niebezpiecznie głośne.</string>
     <string name="convert_for_limited_dac">Konwertuj dla słabszych DAC</string>

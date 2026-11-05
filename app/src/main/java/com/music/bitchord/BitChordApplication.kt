@@ -1,6 +1,8 @@
 package com.music.bitchord
 
 import android.app.Application
+import android.content.ComponentName
+import android.content.pm.PackageManager
 import androidx.annotation.OptIn
 import androidx.compose.ui.ComposeUiFlags
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -142,6 +144,15 @@ class BitChordApplication : Application(), SingletonImageLoader.Factory, Configu
             CoroutineScope(Dispatchers.IO).launch { Innertube.ensureSessionScope() }
         }
         AppSettings.init(this, authStore)
+        CoroutineScope(Dispatchers.Default).launch {
+            AppSettings.usbRememberPermission.collect { on ->
+                packageManager.setComponentEnabledSetting(
+                    ComponentName(this@BitChordApplication, UsbAttachActivity::class.java),
+                    if (on) PackageManager.COMPONENT_ENABLED_STATE_ENABLED else PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                    PackageManager.DONT_KILL_APP,
+                )
+            }
+        }
         // Before anything resolves a track: an addon with `checkValidLossless`
         // is gated on this, and the gate reads "no" until it has looked.
         com.music.bitchord.playback.audio.LosslessOutput.init(this)

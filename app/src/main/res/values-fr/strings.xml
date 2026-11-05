@@ -1426,6 +1426,8 @@
     <string name="dac_volume_subtitle">Réglé sur le DAC lui-même ; la musique n\'est pas mise à l\'échelle</string>
     <string name="usb_allow_fixed_volume">Autoriser les DAC sans contrôle du volume</string>
     <string name="usb_allow_fixed_volume_subtitle">Sinon, ce DAC passe par la sortie normale</string>
+    <string name="usb_remember_permission">Mémoriser le DAC USB</string>
+    <string name="usb_remember_permission_subtitle">Ignore la demande d\'autorisation à la reconnexion</string>
     <string name="usb_allow_fixed_volume_confirm_title">Lire à pleine échelle ?</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord ne peut pas régler le volume de ce type de DAC : il joue donc à pleine échelle et seul son propre bouton, s\'il en a un, contrôle le niveau. Cela peut être dangereusement fort avec un casque sensible.</string>
     <string name="convert_for_limited_dac">Convertir pour les DAC plus limités</string>

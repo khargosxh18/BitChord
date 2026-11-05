@@ -1275,6 +1275,8 @@
     <string name="dac_volume_subtitle">DAC 자체에서 설정되며 음악 데이터는 조정되지 않습니다</string>
     <string name="usb_allow_fixed_volume">음량 조절이 없는 DAC 허용</string>
     <string name="usb_allow_fixed_volume_subtitle">허용하지 않으면 이런 DAC는 일반 출력으로 재생됩니다</string>
+    <string name="usb_remember_permission">USB DAC 기억</string>
+    <string name="usb_remember_permission_subtitle">다시 연결할 때 권한 요청을 건너뜁니다</string>
     <string name="usb_allow_fixed_volume_confirm_title">최대 레벨로 재생할까요?</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord에서 이 유형의 DAC 음량을 설정할 수 없어 최대 레벨로 재생되며, DAC 자체의 노브가 있는 경우에만 음량을 조절할 수 있습니다. 민감한 헤드폰에서는 위험할 정도로 크게 들릴 수 있습니다.</string>
     <string name="convert_for_limited_dac">저사양 DAC에 맞게 변환</string>

@@ -1425,6 +1425,8 @@
     <string name="dac_volume_subtitle">Wird am DAC selbst eingestellt; die Musik wird nicht skaliert</string>
     <string name="usb_allow_fixed_volume">DACs ohne Lautstärkeregelung zulassen</string>
     <string name="usb_allow_fixed_volume_subtitle">Sonst spielt ein solcher DAC über die normale Ausgabe</string>
+    <string name="usb_remember_permission">USB-DAC merken</string>
+    <string name="usb_remember_permission_subtitle">Überspringt die Berechtigungsabfrage beim erneuten Verbinden</string>
     <string name="usb_allow_fixed_volume_confirm_title">Mit voller Aussteuerung abspielen?</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord kann die Lautstärke dieser Art von DAC nicht einstellen. Er spielt daher mit voller Aussteuerung, und nur sein eigener Regler, falls vorhanden, ändert die Lautstärke. Mit empfindlichen Kopfhörern kann das gefährlich laut sein.</string>
     <string name="convert_for_limited_dac">Für einfachere DACs umwandeln</string>

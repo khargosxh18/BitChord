@@ -1430,6 +1430,8 @@
     <string name="dac_volume_subtitle">נקבעת ב-DAC עצמו; המוזיקה אינה משתנה</string>
     <string name="usb_allow_fixed_volume">אפשר רכיבי DAC ללא בקרת עוצמה</string>
     <string name="usb_allow_fixed_volume_subtitle">אחרת, DAC כזה ינגן דרך הפלט הרגיל</string>
+    <string name="usb_remember_permission">זכור DAC ב-USB</string>
+    <string name="usb_remember_permission_subtitle">מדלג על בקשת ההרשאה בחיבור מחדש</string>
     <string name="usb_allow_fixed_volume_confirm_title">לנגן בעוצמה מלאה?</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord לא יכול לקבוע את עוצמת הקול של DAC מסוג זה, ולכן הוא מנגן בעוצמה מלאה ורק הכפתור שלו עצמו, אם יש כזה, שולט בעוצמה. הצליל עלול להיות חזק באופן מסוכן עם אוזניות רגישות.</string>
     <string name="convert_for_limited_dac">המרה לרכיבי DAC מוגבלים</string>

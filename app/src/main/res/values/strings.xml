@@ -1060,6 +1060,8 @@
     <string name="dac_volume_subtitle">Set on the DAC itself; the music is not scaled</string>
     <string name="usb_allow_fixed_volume">Allow DACs without volume control</string>
     <string name="usb_allow_fixed_volume_subtitle">Otherwise such a DAC plays through normal output</string>
+    <string name="usb_remember_permission">Remember USB DAC</string>
+    <string name="usb_remember_permission_subtitle">Skips the permission prompt on reconnect</string>
     <string name="usb_allow_fixed_volume_confirm_title">Play at full scale?</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord can\'t set this kind of DAC\'s volume, so it plays at full scale and only the DAC\'s own knob, if it has one, controls loudness. This can be dangerously loud with sensitive headphones.</string>
     <string name="convert_for_limited_dac">Convert for lower-spec DACs</string>

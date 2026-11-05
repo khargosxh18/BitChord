@@ -1402,6 +1402,8 @@
     <string name="dac_volume_subtitle">在 DAC 本身上设置；音乐数据不会被缩放</string>
     <string name="usb_allow_fixed_volume">允许无音量控制的 DAC</string>
     <string name="usb_allow_fixed_volume_subtitle">否则此类 DAC 将通过普通输出播放</string>
+    <string name="usb_remember_permission">记住 USB DAC</string>
+    <string name="usb_remember_permission_subtitle">重新连接时跳过权限提示</string>
     <string name="usb_allow_fixed_volume_confirm_title">以满刻度播放？</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord 无法设置此类 DAC 的音量，因此它会以满刻度播放，只有 DAC 自身的旋钮（如果有）才能控制响度。使用灵敏的耳机时，声音可能大到危险。</string>
     <string name="convert_for_limited_dac">为低规格 DAC 转换</string>

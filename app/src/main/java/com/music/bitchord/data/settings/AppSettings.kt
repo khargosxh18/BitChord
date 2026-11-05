@@ -294,6 +294,9 @@ object AppSettings {
      */
     val usbAllowFixedVolume = MutableStateFlow(false)
 
+    /** Lets Android save the USB DAC permission, so direct output stops asking on every reconnect. */
+    val usbRememberPermission = MutableStateFlow(false)
+
     /**
      * Lets the exclusive output convert a track its DAC can't take as it is, to
      * the DAC's highest format. Off, such a track goes to normal output and no
@@ -939,6 +942,7 @@ object AppSettings {
             BitPerfectMode.valueOf(prefs.getString(KEY_BIT_PERFECT_MODE, null) ?: BitPerfectMode.OFF.name)
         }.getOrDefault(BitPerfectMode.OFF)
         usbAllowFixedVolume.value = prefs.getBoolean(KEY_USB_ALLOW_FIXED_VOLUME, false)
+        usbRememberPermission.value = prefs.getBoolean(KEY_USB_REMEMBER_PERMISSION, false)
         convertForLimitedDac.value = prefs.getBoolean(KEY_CONVERT_FOR_LIMITED_DAC, false)
         loudnessNormalization.value = prefs.getBoolean(KEY_LOUDNESS_NORMALIZATION, true)
         loudnessOffOnSpeaker.value = prefs.getBoolean(KEY_LOUDNESS_OFF_ON_SPEAKER, true)
@@ -1693,6 +1697,11 @@ object AppSettings {
         prefs.edit().putBoolean(KEY_USB_ALLOW_FIXED_VOLUME, value).apply()
     }
 
+    fun setUsbRememberPermission(value: Boolean) {
+        usbRememberPermission.value = value
+        prefs.edit().putBoolean(KEY_USB_REMEMBER_PERMISSION, value).apply()
+    }
+
     fun setConvertForLimitedDac(value: Boolean) {
         convertForLimitedDac.value = value
         prefs.edit().putBoolean(KEY_CONVERT_FOR_LIMITED_DAC, value).apply()
@@ -2144,6 +2153,7 @@ object AppSettings {
     private const val KEY_PREFER_USB_DAC = "prefer_usb_dac"
     private const val KEY_BIT_PERFECT_MODE = "bit_perfect_mode"
     private const val KEY_USB_ALLOW_FIXED_VOLUME = "usb_allow_fixed_volume"
+    private const val KEY_USB_REMEMBER_PERMISSION = "usb_remember_permission"
     private const val KEY_CONVERT_FOR_LIMITED_DAC = "convert_for_limited_dac"
     private const val KEY_LOUDNESS_NORMALIZATION = "loudness_normalization"
     private const val KEY_LOUDNESS_OFF_ON_SPEAKER = "loudness_off_on_speaker"

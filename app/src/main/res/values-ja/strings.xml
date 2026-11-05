@@ -1403,6 +1403,8 @@
     <string name="dac_volume_subtitle">DAC 本体で設定します。音楽データは変更されません</string>
     <string name="usb_allow_fixed_volume">音量調節のない DAC を許可</string>
     <string name="usb_allow_fixed_volume_subtitle">許可しない場合、そのような DAC は通常の出力で再生します</string>
+    <string name="usb_remember_permission">USB DAC を記憶</string>
+    <string name="usb_remember_permission_subtitle">再接続時の権限確認を省略します</string>
     <string name="usb_allow_fixed_volume_confirm_title">フルスケールで再生しますか？</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord はこの種の DAC の音量を設定できないため、フルスケールで再生され、DAC 自体のつまみ（ある場合）でのみ音量を調節できます。感度の高いヘッドホンでは危険なほど大きな音になることがあります。</string>
     <string name="convert_for_limited_dac">低スペック DAC 向けに変換</string>

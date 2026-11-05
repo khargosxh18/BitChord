@@ -1457,6 +1457,8 @@
     <string name="dac_volume_subtitle">Задаётся на самом ЦАП; музыка не масштабируется</string>
     <string name="usb_allow_fixed_volume">Разрешить ЦАП без регулировки громкости</string>
     <string name="usb_allow_fixed_volume_subtitle">Иначе такой ЦАП играет через обычный вывод</string>
+    <string name="usb_remember_permission">Запомнить USB-ЦАП</string>
+    <string name="usb_remember_permission_subtitle">Не запрашивает разрешение при повторном подключении</string>
     <string name="usb_allow_fixed_volume_confirm_title">Воспроизводить на полной шкале?</string>
     <string name="usb_allow_fixed_volume_confirm_message">BitChord не может задать громкость такого ЦАП, поэтому он играет на полной шкале, а уровень регулирует только его собственная ручка, если она есть. С чувствительными наушниками это может быть опасно громко.</string>
     <string name="convert_for_limited_dac">Преобразование для слабых ЦАП</string>
